@@ -107,6 +107,11 @@ python gpt4v_eval.py --model MODEL_NAME --data-path /path/to/COCO --gpu-id GPU_I
 ```
 
 
+## TODO
+- [x] release main code
+- [ ] release demo
+
+
 ## Acknowledgement
 This repo is partially based on the MLLM codebase of [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4) and the CHAIR code of [Maxlinn](https://github.com/Maxlinn/CHAIR-metric-standalone). Thanks for their impressive works!
 
