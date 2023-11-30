@@ -79,19 +79,19 @@ Besides, it needs you to prepare the following checkpoints of 7B base models:
 
 ### Arguments
 
-| Argument          | Example           | Description   |
-| ----------------- | ----------------- | ------------- |
+| Argument             | Example             | Description   |
+| -------------------- | ------------------- | ------------- |
 | `--model`    | `llava-1.5` | Specify the MLLM model, this codebase supports `instructblip`, `minigpt4`, `llava-1.5`, `shikra`. |
 | `--data-path`     | `/path/to/dataset` | Path to the dataset file or folder, e.g., `COCO_2014/val2014/`. |
 | `--pope-type`     | `random` | Type for POPE evaluation, supports `random`, `popular`, `adversarial`. |
 | `--scale_factor`   | `50` | The scale factor to scale up the self-attention weights. Default: 50. |
 | `--threshold`      | `15` | The threshold for attending retrospection. Default: 15. |
-| `--num_attn_candidates`| `5` | The number of candidates per beam. Default: 5. |
+| `--num_attn_candidates`   | `5` | The number of candidates per beam. Default: 5. |
 | `--penalty_weights`| `1` | The weight of penalty term in decoding. Default: 1.  |
 
 #### POPE
 ```bash
-python pope_eval.py --model MODEL_NAME --data-path /path/to/COCO --pope random --gpu-id GPU_IDs --beam 5 --scale_factor 50 --threshold 15 --num_attn_candidates 5 --penalty_weights 1
+python pope_eval.py --model MODEL_NAME --data-path /path/to/COCO --pope-type random --gpu-id GPU_IDs --beam 5 --scale_factor 50 --threshold 15 --num_attn_candidates 5 --penalty_weights 1
 ```
 
 #### CHAIR
