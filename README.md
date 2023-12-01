@@ -64,6 +64,8 @@ outputs = MLLM_model.generate(
     penalty_weights=1,
 )
 ```
+Please refer to `demo.ipynb` for more details.
+
 
 ## Evaluation
 
@@ -111,9 +113,6 @@ python gpt4v_eval.py --model MODEL_NAME --data-path /path/to/COCO --gpu-id GPU_I
 ```
 
 
-## TODO
-- [x] release main code
-- [ ] release demo
 
 
 ## Acknowledgement
