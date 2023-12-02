@@ -64,7 +64,7 @@ outputs = MLLM_model.generate(
     penalty_weights=1,
 )
 ```
-Please refer to `demo.ipynb` for more details.
+Please refer to `demo.ipynb` [here](https://github.com/shikiw/OPERA/blob/1e74d8b5d082579c81e0e77ef1cf4a44d20ab91e/demo.ipynb) for more details.
 
 
 ## Evaluation
