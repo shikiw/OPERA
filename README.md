@@ -41,12 +41,14 @@ python -m pip install -e transformers-4.29.2
 After setup the environment, you can directly use OPERA by:
 ```
 # specify the location indexes of some input tokens
-START_INDEX_of_IMAGE_TOKENS = <the index of the first image token>
-END_INDEX_of_IMAGE_TOKENS = <the index of the last image token>
+START_INDEX_of_IMAGE_TOKENS = <the location index of the first image token>
+END_INDEX_of_IMAGE_TOKENS = <the location index of the last image token>
+NUM_of_TOKENS_IN_THE_PROMPT = <the total number of tokens in the user prompt (including image tokens)>
+
 key_position = {
   "image_start": START_INDEX_of_IMAGE_TOKENS, 
   "image_end": END_INDEX_of_IMAGE_TOKENS, 
-  "response_start": input_ids.shape[-1]
+  "response_start": NUM_of_TOKENS_IN_THE_PROMPT,
 }
 
 # add some arguments in the generate function
