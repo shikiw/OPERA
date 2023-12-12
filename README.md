@@ -40,7 +40,9 @@ python -m pip install -e transformers-4.29.2
 ## TL;DR
 After setup the environment, you can directly use OPERA by:
 ```
-# need to specify the location indexes of some input tokens
+# specify the location indexes of some input tokens
+START_INDEX_of_IMAGE_TOKENS = <the index of the first image token>
+END_INDEX_of_IMAGE_TOKENS = <the index of the last image token>
 key_position = {
   "image_start": START_INDEX_of_IMAGE_TOKENS, 
   "image_end": END_INDEX_of_IMAGE_TOKENS, 
