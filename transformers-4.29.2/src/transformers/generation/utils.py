@@ -3364,9 +3364,9 @@ class GenerationMixin:
             next_token_logits = outputs.logits[:, -1, :]
 
             # Select candidates
-            if num_attn_candidates < 2:
+            if num_attn_candidates < 1:
                 raise ValueError(
-                    f"Num of candidates must be larger than 1, but it is currently {num_attn_candidates}."
+                    f"Num of candidates must be larger than 0, but it is currently {num_attn_candidates}."
                 )
             candidate_token_scores, candidate_tokens = torch.topk(
                 next_token_logits, num_attn_candidates, dim=-1, largest=True, sorted=True
