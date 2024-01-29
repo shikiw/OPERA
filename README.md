@@ -67,7 +67,24 @@ outputs = MLLM_model.generate(
     num_attn_candidates=5,
     penalty_weights=1,
 )
+# or a more efficient setting:
+outputs = MLLM_model.generate(
+    input_ids=input_ids,
+    inputs_embeds=inputs_embeds,
+    attention_mask=attention_mask,
+    do_sample=False,
+    num_beams=5,
+    max_new_tokens=512,
+    # opera
+    opera_decoding=True,
+    key_position=key_position,
+    scale_factor=50,
+    threshold=25,
+    num_attn_candidates=1,
+    penalty_weights=1,
+)
 ```
+
 Please refer to `demo.ipynb` [here](https://github.com/shikiw/OPERA/blob/1e74d8b5d082579c81e0e77ef1cf4a44d20ab91e/demo.ipynb) for more details.
 
 
