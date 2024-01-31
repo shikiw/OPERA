@@ -63,22 +63,6 @@ outputs = MLLM_model.generate(
     opera_decoding=True,
     key_position=key_position,
     scale_factor=50,
-    threshold=15,
-    num_attn_candidates=5,
-    penalty_weights=1,
-)
-# or a more efficient setting:
-outputs = MLLM_model.generate(
-    input_ids=input_ids,
-    inputs_embeds=inputs_embeds,
-    attention_mask=attention_mask,
-    do_sample=False,
-    num_beams=5,
-    max_new_tokens=512,
-    # opera
-    opera_decoding=True,
-    key_position=key_position,
-    scale_factor=50,
     threshold=25,
     num_attn_candidates=1,
     penalty_weights=1,
