@@ -143,7 +143,7 @@ def main():
     os.environ["CUDA_VISIBLE_DEVICES"] = str(args.gpu_id)
 
     args.cfg_path = MODEL_EVAL_CONFIG_PATH[args.model]
-    args.pope_path = POPE_PATH[args.pope]
+    args.pope_path = POPE_PATH[args.pope_type]
     cfg = Config(args)
 
     setup_seeds(cfg)
@@ -201,7 +201,7 @@ def main():
                     {"image": image, "prompt":qu}, 
                     use_nucleus_sampling=args.sample, 
                     num_beams=args.beam,
-                    max_new_tokens=512,
+                    max_new_tokens=10,
                     output_attentions=True,
                     opera_decoding=True,
                     scale_factor=args.scale_factor,
