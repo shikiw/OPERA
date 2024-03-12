@@ -114,13 +114,13 @@ Besides, it needs you to prepare the following checkpoints of 7B base models:
 
 #### POPE
 ```bash
-python pope_eval.py --model MODEL_NAME --data-path /path/to/COCO --pope-type random --gpu-id GPU_IDs --beam 5 --scale_factor 50 --threshold 15 --num_attn_candidates 5 --penalty_weights 1
+python pope_eval.py --model MODEL_NAME --data_path /path/to/COCO --pope-type random --gpu-id GPU_IDs --beam 5 --scale_factor 50 --threshold 15 --num_attn_candidates 5 --penalty_weights 1
 ```
 
 #### CHAIR
 Generate the MLLM's responses and save them in a jsonl file:
 ```bash
-python chair_eval.py --model MODEL_NAME --data-path /path/to/COCO --gpu-id GPU_IDs --beam 5 --scale_factor 50 --threshold 15 --num_attn_candidates 5 --penalty_weights 1
+python chair_eval.py --model MODEL_NAME --data_path /path/to/COCO --gpu-id GPU_IDs --beam 5 --scale_factor 50 --threshold 15 --num_attn_candidates 5 --penalty_weights 1
 ```
 Calculate CHAIR using the generated jsonl file:
 ```bash
@@ -130,7 +130,7 @@ python chair.py --cap_file /path/to/jsonl --image_id_key image_id --caption_key 
 #### GPT-4V
 The GPT-4V evaluation requires you to specify your API key in [Line 88](https://github.com/shikiw/OPERA/blob/559556048224d5c3eae995a21d529156fb150d5f/gpt4v_eval.py#L88) of `gpt4v_eval.py`.
 ```bash
-python gpt4v_eval.py --model MODEL_NAME --data-path /path/to/COCO --gpu-id GPU_IDs --scale_factor 50 --threshold 15 --num_attn_candidates 5 --penalty_weights 1
+python gpt4v_eval.py --model MODEL_NAME --data_path /path/to/COCO --gpu-id GPU_IDs --scale_factor 50 --threshold 15 --num_attn_candidates 5 --penalty_weights 1
 ```
 
 
