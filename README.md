@@ -38,7 +38,7 @@ python -m pip install -e transformers-4.29.2
 ```
 
 ## TL;DR
-After setup the environment, you can directly use OPERA by:
+After setup the environment, you can directly use OPERA on your own MLLM model by:
 ```
 # specify the location indexes of some input tokens
 START_INDEX_of_IMAGE_TOKENS = <the location index of the first image token>
