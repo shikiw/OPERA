@@ -137,7 +137,7 @@ python gpt4v_eval.py --model MODEL_NAME --data_path /path/to/COCO --gpu-id GPU_I
 
 
 ## Acknowledgement
-This repo is partially based on the MLLM codebase of [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4) and the CHAIR code of [Maxlinn](https://github.com/Maxlinn/CHAIR-metric-standalone). Thanks for their impressive works!
+This repo is based on the MLLM codebase of [LAVIS](https://github.com/salesforce/LAVIS) and [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4) and the CHAIR code of [Maxlinn](https://github.com/Maxlinn/CHAIR-metric-standalone). Thanks for their impressive works!
 
 ## Citation
 If you find this work useful for your research, please cite [our paper](https://arxiv.org/pdf/2311.17911.pdf):
