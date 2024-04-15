@@ -112,12 +112,35 @@ Besides, it needs you to prepare the following checkpoints of 7B base models:
 | `--num_attn_candidates`   | `5` | The number of candidates per beam. Default: 5. |
 | `--penalty_weights`| `1` | The weight of penalty term in decoding. Default: 1.  |
 
-#### POPE
+### POPE
 ```bash
 python pope_eval.py --model MODEL_NAME --data_path /path/to/COCO --pope-type random --gpu-id GPU_IDs --beam 5 --scale_factor 50 --threshold 15 --num_attn_candidates 5 --penalty_weights 1
 ```
+Result on `Random` split:
 
-#### CHAIR
+| Model | Accuracy | Precision | Recall | F1 score| Yes ratio |
+| ----- | -------- | --------- | ------ | ------- | --------- |
+| InstructBLIP 7B | 90.3 | 93.8 | 87.0 | 90.3 | 47.8 |
+| MiniGPT-4 7B | 79.8 | 89.7 | 68.7 | 77.8 | 39.5 |
+| LLaVA-1.5 7B | 89.4 | 90.4 | 88.8 | 89.6 | 50.6 |
+
+Result on `Popular` split:
+
+| Model | Accuracy | Precision | Recall | F1 score| Yes ratio |
+| ----- | -------- | --------- | ------ | ------- | --------- |
+| InstructBLIP 7B | 83.4 | 81.2 | 87.0 | 84.0 | 53.6 |
+| MiniGPT-4 7B | 73.6 | 75.9 | 69.0 | 72.3 | 45.4 |
+| LLaVA-1.5 7B | 86.0 | 84.1 | 88.8 | 86.4 | 52.8 |
+
+Result on `Adversarial` split:
+
+| Model | Accuracy | Precision | Recall | F1 score| Yes ratio |
+| ----- | -------- | --------- | ------ | ------- | --------- |
+| InstructBLIP 7B | 80.7 | 77.3 | 87.0 | 81.9 | 56.3 |
+| MiniGPT-4 7B | 71.6 | 72.9 | 68.9 | 70.8 | 47.3 |
+| LLaVA-1.5 7B | 79.1 | 74.4 | 88.8 | 81.0 | 59.7 |
+
+### CHAIR
 Generate the MLLM's responses and save them in a jsonl file:
 ```bash
 python chair_eval.py --model MODEL_NAME --data_path /path/to/COCO --gpu-id GPU_IDs --beam 5 --scale_factor 50 --threshold 15 --num_attn_candidates 5 --penalty_weights 1
@@ -127,7 +150,7 @@ Calculate CHAIR using the generated jsonl file:
 python chair.py --cap_file /path/to/jsonl --image_id_key image_id --caption_key caption --coco_path /path/to/COCO/annotations_trainval2014/annotations/ --save_path /path/to/save/jsonl
 ```
 
-#### GPT-4V
+### GPT-4V
 The GPT-4V evaluation requires you to specify your API key in [Line 88](https://github.com/shikiw/OPERA/blob/559556048224d5c3eae995a21d529156fb150d5f/gpt4v_eval.py#L88) of `gpt4v_eval.py`.
 ```bash
 python gpt4v_eval.py --model MODEL_NAME --data_path /path/to/COCO --gpu-id GPU_IDs --scale_factor 50 --threshold 15 --num_attn_candidates 5 --penalty_weights 1
