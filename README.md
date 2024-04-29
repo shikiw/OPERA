@@ -146,11 +146,13 @@ Result on `Adversarial` split:
 | LLaVA-1.5 7B | 79.1 | 74.4 | 88.8 | 81.0 | 59.7 |
 
 ### CHAIR
-Generate the MLLM's responses and save them in a jsonl file:
+- Generate the MLLM's responses and save them in a jsonl file:
 ```bash
 python chair_eval.py --model MODEL_NAME --data_path /path/to/COCO --gpu-id GPU_IDs --beam 5 --scale_factor 50 --threshold 15 --num_attn_candidates 5 --penalty_weights 1
 ```
-Calculate CHAIR using the generated jsonl file:
+Note: Please check out our released results in `log/chair_eval_results` for reproduction.
+
+- Calculate CHAIR using the generated jsonl file:
 ```bash
 python chair.py --cap_file /path/to/jsonl --image_id_key image_id --caption_key caption --coco_path /path/to/COCO/annotations_trainval2014/annotations/ --save_path /path/to/save/jsonl
 ```
