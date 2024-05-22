@@ -147,6 +147,7 @@ class LLaVa(BaseModel):
         num_captions=1,
         temperature=1,
         output_attentions=False,
+        return_dict_in_generate=False,
         # ours
         opera_decoding=False,
         key_position=None,
@@ -225,6 +226,7 @@ class LLaVa(BaseModel):
                 # num_return_sequences=num_captions,
                 images=image,
                 output_attentions=output_attentions,
+                return_dict_in_generate=return_dict_in_generate,
                 # opera
                 opera_decoding=opera_decoding,
                 key_position=key_position,
